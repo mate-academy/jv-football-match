@@ -2,3 +2,5 @@ language: java
 
 jdk:
   - openjdk11
+  
+cache: npm

@@ -19,7 +19,7 @@ public class FootballMatchTest {
 
                         Assert.assertEquals("Test failed with parameters = "
                                 + result1 + ", " + result2 + ", "
-                                + bet1 + ", " + bet2, actualResult, expectedResult);
+                                + bet1 + ", " + bet2, expectedResult, actualResult);
                     }
                 }
             }

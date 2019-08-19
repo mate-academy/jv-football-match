@@ -4,9 +4,9 @@ public class FootballMatch {
 
     public int matchResult(int result1, int result2, int bet1, int bet2) {
         int resultConclusion;
-        boolean situationTotalWin = result1 == bet1 && result2 == bet2;
-        boolean situationSimpleWin = ((result1 <= result2 && bet1 <= bet2) ||
-                (result1 > result2 && bet1 > bet2));
+        boolean situationTotalWin = (result1 == bet1 && result2 == bet2);
+        boolean situationSimpleWin = ((result1 < result2 && bet1 < bet2) ||
+                (result1 > result2 && bet1 > bet2) || result1 == result2 && bet1 == bet2);
         resultConclusion = situationTotalWin ? 2 : (situationSimpleWin ? 1 : 0);
         return resultConclusion;
     }

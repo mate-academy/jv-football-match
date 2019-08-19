@@ -30,7 +30,7 @@ public class FootballMatchTest {
         if (result1 == bet1 && result2 == bet2) {
             return 2;
         }
-        if (bet1 == result2 && bet1 == bet2
+        if (result1 == result2 && bet1 == bet2
                 || result1 < result2 && bet1 < bet2
                 || result1 > result2 && bet1 > bet2) {
             return 1;

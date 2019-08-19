@@ -19,8 +19,11 @@ public class FootballMatch {
     public int matchResult(int result1, int result2, int bet1, int bet2) {
         int realResult1 = 1;
         int realResult2 = 2;
-        return (realResult1 == result1) && (realResult2 == result2) ? bet1 + bet2 :
-                ((realResult1 > realResult2) && (result1 > result2)) ||
-                        ((realResult1 > realResult2) && (result1 > result2)) ? bet1 : 0;
+        boolean resultAllGuessed = (realResult1 == result1) && (realResult2 == result2);
+        boolean resultWhoWinGuessed = ((realResult1 > realResult2) && (result1 > result2)) ||
+                ((realResult1 > realResult2) && (result1 > result2));
+        int resultIfWin = resultWhoWinGuessed ? bet1 : 0;
+
+        return resultAllGuessed ? bet1 + bet2 : resultIfWin;
     }
 }

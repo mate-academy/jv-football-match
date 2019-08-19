@@ -19,10 +19,10 @@ public class FootballMatch {
 
         boolean exactPrediction = result1 == bet1 && result2 == bet2;
 
-        return exactPrediction ? 2 : (compare(dif1, dif2) ? 1 : 0);
+        return exactPrediction ? 2 : (sameSignOrZero(dif1, dif2) ? 1 : 0);
     }
 
-    private boolean compare(int a1, int a2) {
-        return (a1 > 0 && a2 > 0) || (a1 == 0 && a2 == 0) || (a1 < 0 && a2 < 0);
+    private boolean sameSignOrZero(int val1, int val2) {
+        return (val1 > 0 && val2 > 0) || (val1 == 0 && val2 == 0) || (val1 < 0 && val2 < 0);
     }
 }

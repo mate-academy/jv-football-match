@@ -10,6 +10,7 @@ public class FootballMatch {
         resultConclusion = situationTotalWin ? 2 : (situationSimpleWin ? 1 : 0);
         return resultConclusion;
     }
+
 }
 
 

@@ -7,9 +7,9 @@ public class FootballMatch {
      * Метод будет принимать 4 параметра и возвращать целое число.
      * 4 параметра метода - результат матча и то, какую ставку сделал пользователь.
      *
-     * Пример: 0,2,1,1. Что значит: команды сыграли в счёт 0:2, а пользователь ставил 1:1.
+     *<p>Пример: 0,2,1,1. Что значит: команды сыграли в счёт 0:2, а пользователь ставил 1:1.
      *
-     * Задача:
+     *<p>Задача:
      *         если пользователь угадал 100% результат - возвращать 2
      *         если угадал, что выиграла какая-либо команда
      *             (пр. сыграли 1:2, а ставил 0:3 - то пользователь у выиграше)
@@ -18,10 +18,11 @@ public class FootballMatch {
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
 
-        int playerResult = (bet1 > bet2 && result1 > result2) ||
-                (bet1 < bet2 && result1 < result2) ||
-                (bet1 == bet2 && result1 == result2) ?
-                (bet1 == result1 && bet2 == result2) ? 2 : 1: 0;
+        int playerResult =
+                (bet1 > bet2 && result1 > result2) || (bet1 < bet2 && result1 < result2)
+                 || (bet1 == bet2 && result1 == result2)
+                        ? (bet1 == result1 && bet2 == result2)
+                            ? 2 : 1 : 0;
 
         return playerResult;
     }

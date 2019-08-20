@@ -14,15 +14,9 @@ public class FootballMatch {
      *         если не угадал ничего - возвращать 0.
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
-        int dif1 = result1 - result2;
-        int dif2 = bet1 - bet2;
-
-        boolean exactPrediction = result1 == bet1 && result2 == bet2;
-
-        return exactPrediction ? 2 : (sameSignOrZero(dif1, dif2) ? 1 : 0);
-    }
-
-    private boolean sameSignOrZero(int val1, int val2) {
-        return (val1 > 0 && val2 > 0) || (val1 == 0 && val2 == 0) || (val1 < 0 && val2 < 0);
+        return result1 == bet1 && result2 == bet2 ? 2
+                :  result1 < result2 && bet1 < bet2
+                || result1 > result2 && bet1 > bet2
+                || result1 == result2 && bet1 == bet2 ? 1 : 0;
     }
 }

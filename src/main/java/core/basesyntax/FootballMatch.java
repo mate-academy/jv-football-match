@@ -21,7 +21,5 @@ public class FootballMatch {
         return (result1 == bet1 && result2 == bet2) ? 2 : (result1 > result2 && bet1 > bet2)
                 || (result1 < result2 && bet1 < bet2)
                 || (result1 == result2 && bet1 == bet2) ? 1 : 0;
-
-
     }
 }

@@ -23,7 +23,6 @@ public class FootballMatch {
         boolean resultWhoWinGuessed = ((realResult1 > realResult2) && (result1 > result2)) ||
                 ((realResult1 > realResult2) && (result1 > result2));
         int resultIfWin = resultWhoWinGuessed ? bet1 : 0;
-
         return resultAllGuessed ? bet1 + bet2 : resultIfWin;
     }
 }

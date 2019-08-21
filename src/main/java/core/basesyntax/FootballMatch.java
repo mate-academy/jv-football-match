@@ -14,7 +14,7 @@ public class FootballMatch {
      *         если угадал, что выиграла какая-либо команда
      *             (пр. сыграли 1:2, а ставил 0:3 - то пользователь у выиграше)
      *             то возвращать 1
-     *         если не угадал ничего - возвращать 0.
+     *         если не угадал ничего - возвращать 0..
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
         return ((result1 == bet1) && ( result2 == bet2)) ? 2 :

@@ -15,20 +15,11 @@ public class FootballMatch {
      * если не угадал ничего - возвращать 0.</p>
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
-        boolean firstTeamWin = false;
-        boolean userBetOnFirstTeam = false;
-        boolean draw = false;
-        boolean userBetOnDraw = false;
-        if (bet1 == bet2) userBetOnDraw = true;
-        if (result1 == result2) draw = true;
-        if (result1 > result2) firstTeamWin = true;
-        if (bet1 > bet2) userBetOnFirstTeam = true;
-        if (result1 == bet1 && result2 == bet2) {
-            return 2;
-        } else if (firstTeamWin == userBetOnFirstTeam && userBetOnDraw == draw) {
-            return 1;
-        } else {
-            return 0;
-        }
+      boolean firstTeamWin = result1 > result2 ? true : false;
+      boolean userBetOnFirstTeam = bet1 > bet2 ? true : false;
+      boolean draw = result1 == result2 ? true : false;
+      boolean userBetOnDraw = bet1 == bet2 ? true : false;
+      return result1 == bet1 && result2 == bet2 ? 2 :
+              (userBetOnDraw == draw) && (userBetOnFirstTeam == firstTeamWin) ? 1 :0;
     }
 }

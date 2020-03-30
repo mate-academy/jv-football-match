@@ -17,8 +17,9 @@ public class FootballMatch {
     public int matchResult(int result1, int result2, int bet1, int bet2) {
         int result = 0;
 
-        return (result1 == bet1 & result2 == bet2 ? result += 2 : result) > 0 ?
-                result : ((result1 > result2 & bet1 > bet2 ? result += 1 : result) > 0 ? result :
-                (result2 > result1 & bet2 > bet1 ? result += 1 : result));
+        return (result1 == bet1 & result2 == bet2 ? result += 2 : result) > 0
+                ? result : (bet1 == bet2 & result1 == result2)
+                ? 1 : (bet1 > bet2 & result1 > result2) | (bet2 > bet1 & result2 > result1)
+                ? 1 : result;
     }
 }

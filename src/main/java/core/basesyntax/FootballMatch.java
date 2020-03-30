@@ -14,7 +14,17 @@ public class FootballMatch {
      * то возвращать 1
      * если не угадал ничего - возвращать 0.</p>
      */
-    public int matchResult(int result1, int result2, int bet1, int bet2) {
-        return 0;
+
+    public static void main(String[] args) {
+        System.out.println(matchResult(5, 2, 3, 4));
     }
-}
+
+    public static int matchResult(int result1, int result2, int bet1, int bet2) {
+        if (bet2 == result1 && bet1 == result2) {
+            return 2;
+        } else if (result1 < bet1 && result2 < bet2) {
+            return 1;
+        } else return 0;
+    }
+    }
+

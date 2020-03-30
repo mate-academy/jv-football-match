@@ -15,10 +15,10 @@ public class FootballMatch {
      * если не угадал ничего - возвращать 0.</p>
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
-        Boolean fullyGuess = result1 == bet1 && result2 == bet2;
-        Boolean partlyGuess = (result1 < result2 && bet1 < bet2)
+        return result1 == bet1 && result2 == bet2
+                ? 2 : (result1 < result2 && bet1 < bet2)
                 || (result1 > result2 && bet1 > bet2)
-                || (result1 == result2 && bet1 == bet2);
-        return fullyGuess ? 2 : partlyGuess ? 1 : 0;
+                || (result1 == result2 && bet1 == bet2)
+                ? 1 : 0;
     }
 }

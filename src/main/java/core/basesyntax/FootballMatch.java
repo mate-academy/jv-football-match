@@ -1,6 +1,10 @@
 package core.basesyntax;
 
 public class FootballMatch {
+    public static void main(String[] args) {
+        FootballMatch match = new FootballMatch();
+        System.out.println(match.matchResult(2, 1, 1, 1));
+    }
 
     /**
      * <p>С помощью тернарного оператора написать функцию, которая будет считать исход матча.
@@ -15,6 +19,10 @@ public class FootballMatch {
      * если не угадал ничего - возвращать 0.</p>
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
-        return 0;
+        int result = 0;
+
+        return (result1 == bet1 & result2 == bet2 ? result += 2 : result) > 0 ?
+                result : ((result1 > result2 & bet1 > bet2 ? result += 1 : result) > 0 ? result :
+                (result2 > result1 & bet2 > bet1 ? result += 1 : result));
     }
 }

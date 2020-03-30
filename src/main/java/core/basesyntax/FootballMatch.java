@@ -19,6 +19,5 @@ public class FootballMatch {
                 ? 2 : (result1 - result2) * (bet1 - bet2) > 0
                 ? 1 : (result1 - result2) == 0 && (bet1 - bet2) == 0
                 ? 1 : 0;
-
     }
 }

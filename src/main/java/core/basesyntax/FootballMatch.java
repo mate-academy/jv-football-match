@@ -15,10 +15,10 @@ public class FootballMatch {
      * если не угадал ничего - возвращать 0.</p>
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
-        int winTeamNumber = result1 > result2 ? 1 : result1 < result2 ? 2 : 0;
-        int myPrediction = bet1 > bet2 ? 1 : bet1 < bet2 ? 2 : 0;
-        return (result1 + "" + result2).equals(bet1 + "" + bet2) ? 2 : winTeamNumber == myPrediction ? 1 : 0;
-
+        return (result1 == bet1 && result2 == bet2)
+                ? 2 : (result1 == result2 && bet1 == bet2
+                || result1 > result2 && bet1 > bet2
+                || result2 > result1 && bet2 > bet1) ? 1 : 0;
 
     }
 }

@@ -1,10 +1,6 @@
 package core.basesyntax;
 
 public class FootballMatch {
-    public static void main(String[] args) {
-        FootballMatch match = new FootballMatch();
-        System.out.println(match.matchResult(2, 1, 1, 1));
-    }
 
     /**
      * <p>С помощью тернарного оператора написать функцию, которая будет считать исход матча.

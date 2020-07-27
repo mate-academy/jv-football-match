@@ -15,19 +15,10 @@ public class FootballMatch {
      * если не угадал ничего - возвращать 0.</p>
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
-        int matchOutcome;
-        int betOutcome;
 
-        matchOutcome = result1 == result2
-                ? 2
-                : (result1 > result2 ? 1 : 0);
-
-        betOutcome = bet1 == bet2
-                ? 2
-                : (bet1 > bet2 ? 1 : 0);
-
-        return (result1 == bet1) && (result2 == bet2)
-                ? 2
-                : (matchOutcome == betOutcome ? 1 : 0);
+        return (result1 == bet1) && (result2 == bet2) ? 2
+                : ((((result1 > result2) && (bet1 > bet2))
+                || ((result1 < result2) && (bet1 < bet2))
+                || ((result1 == result2) && (bet1 == bet2))) ? 1 : 0);
     }
 }

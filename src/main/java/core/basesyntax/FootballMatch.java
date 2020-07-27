@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import java.util.List;
+
 public class FootballMatch {
 
     /**
@@ -15,13 +17,8 @@ public class FootballMatch {
      * если не угадал ничего - возвращать 0.</p>
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
-
-        boolean firstTeamWin = result1 > result2 & bet1 > bet2;
-        boolean secondTeamWin = result1 < result2 & bet1 < bet2;
-        boolean draw = result1 == result2 & bet1 == bet2;
-        boolean exactBet = result1 == bet1 & result2 == bet2;
-
-        return exactBet ? 2 : (firstTeamWin || secondTeamWin || draw ? 1 : 0);
+        List<Boolean> flags = List.of(result1 > result2 & bet1 > bet2,
+                result1 < result2 & bet1 < bet2, result1 == result2 & bet1 == bet2);
+        return result1 == bet1 & result2 == bet2 ? 2 : (flags.indexOf(true) != -1 ? 1 : 0);
     }
 }
-

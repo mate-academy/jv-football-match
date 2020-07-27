@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import java.util.Scanner;
+
 public class FootballMatch {
 
     /**
@@ -15,6 +17,22 @@ public class FootballMatch {
      * если не угадал ничего - возвращать 0.</p>
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
-        return 0;
+        int guess, maxResult, maxBet;
+        maxResult = result1 > result2 ? result1 : result2;
+        maxBet = bet1 > bet2 ? bet1 : bet2;
+        if((result1 == result2 && bet1 == bet2) && (result1 != bet1 && result2 != bet2)) {
+            guess = 1;
+        } else {
+            if (result1 == bet1 && result2 == bet2) {
+                guess = 2;
+            } else {
+                if ((maxResult == result1 && maxBet == bet1 || maxResult == result2 && maxBet == bet2) && (result1 != result2 && bet1 != bet2)) {
+                    guess = 1;
+                } else {
+                    guess = 0;
+                }
+            }
+        }
+            return guess;
     }
 }

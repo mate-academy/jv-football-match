@@ -18,8 +18,6 @@ public class FootballMatch {
         return (result1 == bet1 && result2 == bet2) ? 2
                 : (result2 > result1 && bet2 > bet1) ? 1
                 : (result1 > result2 && bet1 > bet2) ? 1
-                : (result2 == result1 && bet2 == bet1) ? 1
-                : 0;
-
+                : (result2 == result1 && bet2 == bet1) ? 1 : 0;
     }
 }

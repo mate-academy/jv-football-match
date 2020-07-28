@@ -7,6 +7,6 @@ public class FootballMatch {
                 ? 2 :
                 (result1 == result2 && bet1 == bet2
                 || result1 < result2 && bet1 < bet2
-                || result1 > result2 && bet1 > bet2 )? 1 : 0;
+                || result1 > result2 && bet1 > bet2) ? 1 : 0;
     }
 }

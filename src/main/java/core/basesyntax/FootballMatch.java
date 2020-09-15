@@ -17,6 +17,6 @@ public class FootballMatch {
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
         System.out.println("abc");
-        return 5;
+        return 6;
     }
 }

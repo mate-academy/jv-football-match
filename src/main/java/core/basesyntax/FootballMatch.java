@@ -15,6 +15,8 @@ public class FootballMatch {
      * если не угадал ничего - возвращать 0.</p>
      */
     public int matchResult(int result1, int result2, int bet1, int bet2) {
-        return 0;
+        return result1 == bet1 && result2 == bet2 ? 2
+                : Integer.compare(result1, result2) == Integer.compare(bet1, bet2) ? 1
+                : 0;
     }
 }
